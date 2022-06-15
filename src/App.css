@@ -1,42 +1,143 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #393939;
+}
+
 .App {
   text-align: center;
+  color: #eee;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 100px;
+  max-height: 100px;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #393939;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(20px);
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  min-width: 100px;
+  margin: 5px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: #282c34;
+  color: white;
+  border-radius: 16px;
+  border: transparent;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+button:hover {
+  background-color: #444;
 }
+
+button:active {
+  background-color: #555;
+}
+
+input {
+  padding: 12px;
+  margin: 2px;
+  font-size: 16px;
+  background-color: #222;
+  color:White;
+  border-radius: 16px;
+  border: transparent;
+}
+
+hr {
+  min-width: 300px;
+}
+
+/* LOADING ANIMATION */
+.loader {
+  border: 6px solid #4af;
+  border-radius: 100%;
+  width: 55px;
+  height: 55px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1.2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+  /* Cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+
+
+  /* Table */
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    border-style: hidden;
+    background-color: #666;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: #eee;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #555;
+  }
+
+
+  /* Split panel */
+  .split {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .left {
+    left: 0;
+    float: left;
+  }
+  
+  .right {
+    right: 0;
+    float: right;
+  }

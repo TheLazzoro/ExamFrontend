@@ -121,8 +121,8 @@ function App() {
           >
             <div className="link-container">
               <Link to="/Home" style={linkStyle}>Home</Link> |{" "}
-              <Link to="/Houses" style={linkStyle}>Houses</Link> |{" "}
               <Link to="/Rentals" style={linkStyle}>Rental Agreements</Link> |{" "}
+              <Link to="/User" style={linkStyle}>User page</Link> |{" "}
               <Link to="/Admin" style={linkStyle}>Admin page</Link> |{" "}
             </div>
           </nav>

@@ -77,6 +77,12 @@ function apiFacade() {
 		return fetch(BASE_URL + "/api/tenant", options).then(handleHttpErrors);
 	}
 
+	const getAllRentals = (username) => {
+		const options = makeOptions("GET", true); //True add's the token
+
+		return fetch(BASE_URL + "/api/rental/user/" + username, options).then(handleHttpErrors);
+	}
+
 	const createHouse = (house) => {
 		const options = makeOptions("POST", true, house);
 
@@ -120,6 +126,7 @@ function apiFacade() {
 		createHouse,
 		createRental,
 		getAllTenants,
+		getAllRentals,
 	};
 }
 

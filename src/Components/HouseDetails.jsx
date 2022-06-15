@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 const HouseDetails = () => {
     const location = useLocation();
     const { rentalData } = location.state;
-    console.log(rentalData);
 
     return (
         <div>

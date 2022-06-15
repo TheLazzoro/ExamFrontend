@@ -31,6 +31,7 @@ const AdminPage = () => {
 					>
 						<div className="link-container">
 							<Link to="/Admin/Houses" style={linkStyle}>Houses</Link> |{" "}
+							<Link to="/Admin/Rentals" style={linkStyle}>Rentals</Link> |{" "}
 							<Link to="/Admin/CreateHouse" style={linkStyle}>Create House</Link> |{" "}
 							<Link to="/Admin/CreateRental" style={linkStyle}>Create Rental Agreement</Link> |{" "}
 						</div>

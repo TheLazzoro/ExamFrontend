@@ -16,6 +16,9 @@ const CreateRentalPage = () => {
         async function populateHouses() {
             await facade.getAllHouses().then(res => {
                 setHousesArr(res.houses);
+                if (res.houses.length > 0)
+                    setSelectedHouse(res.houses[0]);
+
                 console.log(res.houses);
             });
 
@@ -97,6 +100,9 @@ const CreateRentalPage = () => {
             </div>
             <div className='split right' >
                 <table style={{ width: "300px" }}>
+                    <tr>
+                        <th><h3>Added Tenants</h3></th>
+                    </tr>
                     <tr>
                         <th>Name</th>
                     </tr>

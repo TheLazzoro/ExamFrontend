@@ -77,10 +77,16 @@ function apiFacade() {
 		return fetch(BASE_URL + "/api/tenant", options).then(handleHttpErrors);
 	}
 
-	const getAllRentals = (username) => {
+	const getAllRentalsByUser = (username) => {
 		const options = makeOptions("GET", true); //True add's the token
 
 		return fetch(BASE_URL + "/api/rental/user/" + username, options).then(handleHttpErrors);
+	}
+
+	const getAllRentals = () => {
+		const options = makeOptions("GET", true); //True add's the token
+
+		return fetch(BASE_URL + "/api/rental", options).then(handleHttpErrors);
 	}
 
 	const createHouse = (house) => {
@@ -127,6 +133,7 @@ function apiFacade() {
 		createRental,
 		getAllTenants,
 		getAllRentals,
+		getAllRentalsByUser,
 	};
 }
 

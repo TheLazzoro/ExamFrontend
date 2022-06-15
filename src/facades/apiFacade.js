@@ -71,10 +71,22 @@ function apiFacade() {
 		return fetch(BASE_URL + "/api/house", options).then(handleHttpErrors);
 	}
 
-	const createHouse = (recipe) => {
-		const options = makeOptions("POST", true, recipe);
+	const getAllTenants = () => {
+		const options = makeOptions("GET", true); //True add's the token
+
+		return fetch(BASE_URL + "/api/tenant", options).then(handleHttpErrors);
+	}
+
+	const createHouse = (house) => {
+		const options = makeOptions("POST", true, house);
 
 		return fetch(BASE_URL + "/api/house/create", options).then(handleHttpErrors);
+	}
+
+	const createRental = (rental) => {
+		const options = makeOptions("POST", true, rental);
+
+		return fetch(BASE_URL + "/api/rental/create", options).then(handleHttpErrors);
 	}
 
 	const makeOptions = (method, addToken, body) => {
@@ -106,6 +118,8 @@ function apiFacade() {
 		fetchData,
 		getAllHouses,
 		createHouse,
+		createRental,
+		getAllTenants,
 	};
 }
 

@@ -65,7 +65,7 @@ export const LoggedIn = () => {
 
   return (
     <div>
-      <h2>Opskrift Manager</h2>
+      <h2>Rental</h2>
       <h3>{welcomeUser}</h3>
     </div>
   );
@@ -120,8 +120,10 @@ function App() {
             }}
           >
             <div className="link-container">
-              <Link to="/HomePage" style={linkStyle}>Welcome page</Link> |{" "}
-              <Link to="/adminpage" style={linkStyle}>Admin page</Link> |{" "}
+              <Link to="/Home" style={linkStyle}>Home</Link> |{" "}
+              <Link to="/Houses" style={linkStyle}>Houses</Link> |{" "}
+              <Link to="/Rentals" style={linkStyle}>Rentals</Link> |{" "}
+              <Link to="/Admin" style={linkStyle}>Admin page</Link> |{" "}
             </div>
           </nav>
           <Outlet />

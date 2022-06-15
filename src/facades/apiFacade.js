@@ -65,16 +65,16 @@ function apiFacade() {
 		}
 	};
 
-	const getAllRecipes = () => {
+	const getAllHouses = () => {
 		const options = makeOptions("GET", true); //True add's the token
 
-		return fetch(BASE_URL + "/api/recipe", options).then(handleHttpErrors);
+		return fetch(BASE_URL + "/api/house", options).then(handleHttpErrors);
 	}
 
-	const createRecipe = (recipe) => {
+	const createHouse = (recipe) => {
 		const options = makeOptions("POST", true, recipe);
 
-		return fetch(BASE_URL + "/api/recipe/create", options).then(handleHttpErrors);
+		return fetch(BASE_URL + "/api/house/create", options).then(handleHttpErrors);
 	}
 
 	const makeOptions = (method, addToken, body) => {
@@ -104,8 +104,8 @@ function apiFacade() {
 		logout,
 		createUser,
 		fetchData,
-		getAllRecipes,
-		createRecipe,
+		getAllHouses,
+		createHouse,
 	};
 }
 

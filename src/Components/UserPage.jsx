@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import facade from '../facades/apiFacade';
+import HouseCard from './HouseCard';
 import RentalCard from './RentalCard';
 
 const UserPage = () => {

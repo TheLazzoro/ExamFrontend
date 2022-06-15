@@ -6,8 +6,8 @@ import AdminPage from './Components/AdminPage'
 import CreateHousePage from './Components/CreateHousePage'
 import CreateRentalPage from './Components/CreateRentalPage'
 import HomePage from './Components/HomePage'
+import HouseDetails from './Components/HouseDetails'
 import HousesPage from './Components/HousesPage'
-import RentalsPage from './Components/RentalsPage'
 import UserPage from './Components/UserPage'
 import './index.css'
 import CreateAccount from './routes/CreateAccount'
@@ -20,8 +20,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/' element={<App />} >
           <Route path='/Home' element={<HomePage />} />
           <Route path='/Houses' element={<HousesPage />} />
-          <Route path='/Rentals' element={<RentalsPage />} />
           <Route path='/User' element={<UserPage />} />
+          <Route path='/User/HouseDetails' element={<HouseDetails />} />
           <Route path='/Admin' element={<AdminPage />} >
             <Route path='/Admin/Houses' element={<HousesPage />} />
             <Route path='/Admin/CreateHouse' element={<CreateHousePage />} />

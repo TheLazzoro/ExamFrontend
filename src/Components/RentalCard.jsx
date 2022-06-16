@@ -1,17 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { linkStyleUnderline } from '../stylesReact';
+import facade from '../facades/apiFacade';
+import { linkStyle, linkStyleUnderline } from '../stylesReact';
 
-const RentalCard = ({ rental }) => {
+const RentalCard = ({ rental, onDeleteRental }) => {
     const house = rental.house;
-    const startDate = rental.startDate;
-    const endDate = rental.endDate;
-    const priceAnnual = rental.priceAnnual;
-    const deposit = rental.deposit;
-
 
     console.log(rental);
-
+    
+    const onClickDelete = async (evt) => {
+        const id = evt.target.id;
+        await facade.deleteRental(id).then( res => {
+            console.log(res);
+            onDeleteRental();
+        });
+    }
 
     return (
         <div className='card' style={{ display: "inline-block", width: "200px", margin: "10px" }}>
@@ -19,6 +22,8 @@ const RentalCard = ({ rental }) => {
             <div className='container'>
                 <Link to="/User/HouseDetails" style={linkStyleUnderline} state={{rentalData: rental}} >{house.address}</Link>
                 <p>{house.city}</p>
+                <Link to="/Admin/Rentals/Edit" style={linkStyleUnderline}>Edit</Link>
+                <button id={rental.id} onClick={onClickDelete}>Delete</button>
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import facade from "./facades/apiFacade";
 import logo from "../src/Img/HouseRental.webp";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { linkStyle, linkStyleUnderline } from "./stylesReact";
-import HomePage from "./Components/HomePage";
+import HomePage from "./routes/HomePage";
 
 const Login = ({ login, loginFailed }) => {
   const init = { username: "", password: "" };

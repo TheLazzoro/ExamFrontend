@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import facade from '../facades/apiFacade';
-import HouseCard from './HouseCard';
+import HouseCard from '../Components/HouseCard';
 
 
 const HousesPage = () => {

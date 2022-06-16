@@ -2,16 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import App from './App'
-import AdminPage from './Components/AdminPage'
-import CreateHousePage from './Components/CreateHousePage'
-import CreateRentalPage from './Components/CreateRentalPage'
-import HomePage from './Components/HomePage'
+import AdminPage from './routes/AdminPage'
+import CreateHousePage from './routes/CreateHousePage'
+import CreateRentalPage from './routes/CreateRentalPage'
+import EditRentalPage from './routes/EditRentalPage'
+import HomePage from './routes/HomePage'
 import HouseDetails from './Components/HouseDetails'
-import HouseDetailsAdmin from './Components/HouseDetailsAdmin'
-import HousesPage from './Components/HousesPage'
-import RentalAgreementPage from './Components/RentalAgreementPage'
-import UserPage from './Components/UserPage'
-import UserRentals from './Components/UserRentals'
+import HouseDetailsAdmin from './routes/HouseDetailsAdmin'
+import HousesPage from './routes/HousesPage'
+import RentalAgreementPage from './routes/RentalAgreementPage'
+import UserPage from './routes/UserPage'
+import UserRentals from './routes/UserRentals'
 import './index.css'
 import CreateAccount from './routes/CreateAccount'
 import NotFound from './routes/NotFound'
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/Admin' element={<AdminPage />} >
             <Route path='/Admin/Houses' element={<HousesPage />} />
             <Route path='/Admin/Rentals' element={<RentalAgreementPage />} />
+            <Route path='/Admin/Rentals/Edit' element={<EditRentalPage />} />
             <Route path='/Admin/CreateHouse' element={<CreateHousePage />} />
             <Route path='/Admin/CreateRental' element={<CreateRentalPage />} />
           </Route>

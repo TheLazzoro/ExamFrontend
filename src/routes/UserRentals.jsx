@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import facade from '../facades/apiFacade';
-import RentalCard from './RentalCard';
+import RentalCard from '../Components/RentalCard';
 
 const UserRentals = () => {
     const [isLoadingRentals, setIsLoadingRentals] = useState(true);

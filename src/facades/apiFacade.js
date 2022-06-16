@@ -107,6 +107,12 @@ function apiFacade() {
 		return fetch(BASE_URL + "/api/rental/create", options).then(handleHttpErrors);
 	}
 
+	const deleteRental = (rentalId) => {
+		const options = makeOptions("DELETE", true);
+
+		return fetch(BASE_URL + "/api/rental/delete/" + rentalId, options).then(handleHttpErrors);
+	}
+
 	const makeOptions = (method, addToken, body) => {
 		var opts = {
 			method: method,
@@ -141,6 +147,7 @@ function apiFacade() {
 		getTenantsByHouseId,
 		getAllRentals,
 		getAllRentalsByUser,
+		deleteRental,
 	};
 }
 

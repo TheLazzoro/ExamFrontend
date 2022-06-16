@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import facade from '../facades/apiFacade';
-import RentalCard from './RentalCard';
+import RentalCard from '../Components/RentalCard';
 
 const RentalAgreementPage = () => {
     const [rentalsArr, setRentalsArr] = useState([]);
@@ -23,9 +23,13 @@ const RentalAgreementPage = () => {
 
     }, [isLoading]);
 
+    const onDeleteRental = () => {
+        setIsLoading(true);
+    }
+
   return (
     <div>
-    {isLoading ? "Loading" : (rentalsArr.map(el => <RentalCard rental={el} />))}
+    {isLoading ? "Loading" : (rentalsArr.map(el => <RentalCard rental={el} onDeleteRental={onDeleteRental} />))}
     </div>
   )
 }

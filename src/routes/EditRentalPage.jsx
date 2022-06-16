@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import facade from '../facades/apiFacade';
+import { useLocation } from 'react-router-dom';
 
 const EditRentalPage = () => {
-    const [isLoading, setIsLoading] = useState([]);
-    const [tenantsArr, setTenantsArr] = useState([]);
+    const location = useLocation();
+    const { rentalData } = location.state;
 
-    useEffect(() => {
-        async function populateRentals() {
-            await facade.getAllRentals().then(res => {
-                setRentalsArr(res.rentals);
-                console.log(res.rentals);
-            }).catch(e => {
-                console.log(e);
-            });
-            setIsLoading(false);
-        }
-        populateRentals();
-
-    }, [isLoading]);
+    console.log("rental Data: " + rentalData.house);
 
   return (
-    <div>EditRentalPage</div>
+    <div>
+        <h2>Edit Rental</h2>
+        <div>
+            <h3>No time :(</h3>
+            <h3>Backend functionality exists.</h3>
+        </div>
+    </div>
   )
 }
 

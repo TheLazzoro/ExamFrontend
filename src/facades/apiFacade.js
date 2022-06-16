@@ -46,10 +46,15 @@ function apiFacade() {
 			});
 	};
 
-	const createUser = (user, password) => {
+	const createUser = (user, password, name, phone, job) => {
 		const options = makeOptions("POST", true, {
 			username: user,
 			password: password,
+			tenant: {
+				name: name,
+				phone: phone,
+				job: job,
+			},
 		});
 		return fetch(BASE_URL + "/api/create-user", options)
 			.then(handleHttpErrors);

@@ -65,7 +65,7 @@ export const LoggedIn = () => {
 
   return (
     <div>
-      <h2>Rental</h2>
+      <h2>House Rental</h2>
       <h3>{welcomeUser}</h3>
     </div>
   );

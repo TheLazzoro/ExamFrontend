@@ -22,7 +22,7 @@ const RentalCard = ({ rental, onDeleteRental }) => {
             <div className='container'>
                 <Link to="/User/HouseDetails" style={linkStyleUnderline} state={{rentalData: rental}} >{house.address}</Link>
                 <p>{house.city}</p>
-                <Link to="/Admin/Rentals/Edit" style={linkStyleUnderline}>Edit</Link>
+                <Link to="/Admin/Rentals/Edit" style={linkStyleUnderline} state={{rentalData: rental}}>Edit</Link>
                 <button id={rental.id} onClick={onClickDelete}>Delete</button>
             </div>
         </div>

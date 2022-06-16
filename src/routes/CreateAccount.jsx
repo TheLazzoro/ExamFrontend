@@ -8,6 +8,7 @@ import { linkStyleUnderline } from '../stylesReact';
 const CreateAccount = () => {
     const init = { username: "", password: "", repeatedPassword: "" };
     const [userCredentials, setUserCredentials] = useState(init);
+    const [tenantCredentials, setTenantCredentials] = useState(init);
     const [errorText, setErrorText] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
@@ -17,7 +18,7 @@ const CreateAccount = () => {
 
         if (userCredentials.password === userCredentials.repeatedPassword) {
             setIsLoading(true);
-            facade.createUser(userCredentials.username, userCredentials.password).then((res) => {
+            facade.createUser(userCredentials.username, userCredentials.password, tenantCredentials.name, tenantCredentials.phone, tenantCredentials.job).then((res) => {
                 setErrorText("");
             }).catch(e => {
                 if (e.status === 409) {
@@ -39,6 +40,13 @@ const CreateAccount = () => {
             [evt.target.id]: evt.target.value,
         });
     };
+    const onChangeTenantDetails = (evt) => {
+        setTenantCredentials({
+            ...tenantCredentials,
+            [evt.target.id]: evt.target.value,
+        });
+    };
+
 
     return (
         <header className="App-header" >
@@ -53,6 +61,19 @@ const CreateAccount = () => {
                 </div>
                 <div>
                     <input placeholder="Repeat Password" type="password" id="repeatedPassword" />
+                </div>
+                <p />
+
+            </form>
+            <form onChange={onChangeTenantDetails}>
+                <div>
+                    <input placeholder="Full Name" type="input" id="name" />
+                </div>
+                <div>
+                    <input placeholder="Phone" type="input" id="phone" />
+                </div>
+                <div>
+                    <input placeholder="Job" type="input" id="job" />
                 </div>
                 <div>
                     <button onClick={performCreateUser}>Create User</button>
